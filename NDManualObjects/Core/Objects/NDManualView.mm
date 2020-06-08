@@ -1,16 +1,16 @@
 //
 //  NDManualView.mm
-//  NDManualObject
+//  NDManualObjects
 //
 //  Created by Nguyen Duc Hiep on 2/13/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
 //
 
-#import "NDManualObject/Objects/NDManualView.h"
+#import <NDManualObjects/Objects/NDManualView.h>
 
 @implementation NDManualView
 
-// MARK:- UIView
+// MARK: - UIView
 
 - (instancetype)initWithCoder:(NSCoder*)coder {
   self = [super initWithCoder:coder];
@@ -28,14 +28,7 @@
   return self;
 }
 
-- (void)prepareForInterfaceBuilder {
-  [super prepareForInterfaceBuilder];
-  [self.subviews enumerateObjectsUsingBlock:^(UIView* obj, NSUInteger, BOOL*) {
-    [obj prepareForInterfaceBuilder];
-  }];
-}
-
-// MARK:- NDManualObject
+// MARK: - NDManualObject
 
 - (void)manualInit {
 }

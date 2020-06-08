@@ -1,18 +1,18 @@
 //
-//  NDManualObjectTests.m
-//  NDManualObjectTests
+//  NDManualObjectsTests.m
+//  NDManualObjectsTests
 //
-//  Created by Nguyen Duc Hiep on 2/13/20.
+//  Created by Nguyen Duc Hiep on 6/8/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 
-@interface NDManualObjectTests : XCTestCase
+@interface NDManualObjectsTests : XCTestCase
 
 @end
 
-@implementation NDManualObjectTests
+@implementation NDManualObjectsTests
 
 - (void)setUp {
   // Put setup code here. This method is called before the invocation of each

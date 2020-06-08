@@ -1,14 +1,14 @@
 //
-//  UIView+NDManualObject.mm
-//  NDMVVM
+//  UIView+NDManualObjects.mm
+//  NDManualObjects
 //
 //  Created by Nguyen Duc Hiep on 2/13/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
 //
 
-#import "NDManualObject/Utils/UIView+NDManualObject.h"
+#import <NDManualObjects/Utils/UIView+NDManualObjects.h>
 
-@implementation UIView (NDManualObject)
+@implementation UIView (NDManualObjects)
 
 - (void)nd_addSubviews:(NSArray<UIView*>*)views {
   [self nd_addSubviews:views translatesAutoresizingMaskIntoConstraints:@(NO)];

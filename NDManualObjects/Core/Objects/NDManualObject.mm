@@ -1,16 +1,16 @@
 //
 //  NDManualObject.mm
-//  NDManualObject
+//  NDManualObjects
 //
 //  Created by Nguyen Duc Hiep on 2/13/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
 //
 
-#import "NDManualObject/Objects/NDManualObject2.h"
+#import <NDManualObjects/Objects/NDManualObject.h>
 
 @implementation NDManualObject
 
-// MARK:- NSObject
+// MARK: - NSObject
 
 - (instancetype)init {
   self = [super init];
@@ -20,7 +20,7 @@
   return self;
 }
 
-// MARK:- NDManualObject
+// MARK: - NDManualObject
 
 - (void)manualInit {
 }

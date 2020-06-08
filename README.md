@@ -1,1 +1,1 @@
-# nd-manual-object
+# nd-manual-objects

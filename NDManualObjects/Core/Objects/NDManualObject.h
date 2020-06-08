@@ -1,18 +1,16 @@
 //
-//  NDManualView.h
-//  NDManualObject
+//  NDManualObject.h
+//  NDManualObjects
 //
 //  Created by Nguyen Duc Hiep on 2/13/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-#import <NDManualObject/Abstracts/NDManualObject1.h>
+#import <NDManualObjects/Abstracts/NDManualObject.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NDManualView : UIView <NDManualObject>
+@interface NDManualObject : NSObject <NDManualObject>
 @end
 
 NS_ASSUME_NONNULL_END

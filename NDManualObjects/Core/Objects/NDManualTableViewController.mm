@@ -1,16 +1,25 @@
 //
 //  NDManualTableViewController.mm
-//  NDManualObject
+//  NDManualObjects
 //
 //  Created by Nguyen Duc Hiep on 2/13/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
 //
 
-#import "NDManualObject/Objects/NDManualTableViewController.h"
+#import <NDManualObjects/Objects/NDManualTableViewController.h>
 
 @implementation NDManualTableViewController
 
-// MARK:- UITableViewController
+- (void)registerClass:(Class)cls identifier:(NSString*)identifier {
+  [self.tableView registerClass:cls forCellReuseIdentifier:identifier];
+}
+
+- (void)registerNibName:(NSString*)nibName identifier:(NSString*)identifier {
+  [self.tableView registerNib:[UINib nibWithNibName:nibName bundle:nil]
+       forCellReuseIdentifier:identifier];
+}
+
+// MARK: - UITableViewController
 
 - (instancetype)initWithStyle:(UITableViewStyle)style {
   self = [super initWithStyle:style];
@@ -37,7 +46,16 @@
   return self;
 }
 
-// MARK:- NDManualObject
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  if (self.loadHandler) {
+    self.loadHandler(self);
+    self.loadHandler = nil;
+  }
+}
+
+// MARK: - NDManualObject
 
 - (void)manualInit {
 }

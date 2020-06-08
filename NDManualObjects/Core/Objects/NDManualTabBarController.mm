@@ -1,16 +1,16 @@
 //
-//  NDManualViewController.mm
-//  NDManualObject
+//  NDManualTabBarController.mm
+//  NDManualObjects
 //
 //  Created by Nguyen Duc Hiep on 2/13/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
 //
 
-#import "NDManualObject/Objects/NDManualViewController.h"
+#import <NDManualObjects/Objects/NDManualTabBarController.h>
 
-@implementation NDManualViewController
+@implementation NDManualTabBarController
 
-// MARK:- UIViewController
+// MARK: - UITabBarController
 
 - (instancetype)initWithNibName:(NSString*)nibNameOrNil
                          bundle:(NSBundle*)nibBundleOrNil {
@@ -29,7 +29,7 @@
   return self;
 }
 
-// MARK:- NDManualObject
+// MARK: - NDManualObject
 
 - (void)manualInit {
 }

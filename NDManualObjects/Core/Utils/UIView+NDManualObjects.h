@@ -1,6 +1,6 @@
 //
-//  UIView+NDManualObject.h
-//  NDMVVM
+//  UIView+NDManualObjects.h
+//  NDManualObjects
 //
 //  Created by Nguyen Duc Hiep on 2/13/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIView (NDManualObject)
+@interface UIView (NDManualObjects)
 
 /// Add subviews. All subview will be set
 /// translatesAutoresizingMaskIntoConstraints to NO.

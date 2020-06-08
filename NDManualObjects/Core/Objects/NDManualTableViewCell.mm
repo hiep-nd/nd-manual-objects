@@ -1,16 +1,16 @@
 //
 //  NDManualTableViewCell.mm
-//  NDManualObject
+//  NDManualObjects
 //
 //  Created by Nguyen Duc Hiep on 2/13/20.
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
 //
 
-#import "NDManualObject/Objects/NDManualTableViewCell.h"
+#import <NDManualObjects/Objects/NDManualTableViewCell.h>
 
 @implementation NDManualTableViewCell
 
-// MARK:- UITableViewCell
+// MARK: - UITableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style
               reuseIdentifier:(NSString*)reuseIdentifier {
@@ -29,7 +29,7 @@
   return self;
 }
 
-// MARK:- NDManualObject
+// MARK: - NDManualObject
 
 - (void)manualInit {
 }
