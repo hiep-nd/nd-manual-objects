@@ -104,6 +104,7 @@
 /* Begin PBXFileReference section */
 		BA241A932490D88E00CC5383 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA241A952490D89500CC5383 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BA241A9A2490F22600CC5383 /* NDManualObjects.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = NDManualObjects.modulemap; sourceTree = "<group>"; };
 		BA3E160A248E15BC00FA0E33 /* NDManualObjects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NDManualObjects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3E160E248E15BC00FA0E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3E1613248E15BD00FA0E33 /* NDManualObjectsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NDManualObjectsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +194,7 @@
 				BA3E1629248E15D800FA0E33 /* Objects */,
 				BA3E163A248E15D800FA0E33 /* Utils */,
 				BA3E163D248E15D800FA0E33 /* Abstracts */,
+				BA241A9A2490F22600CC5383 /* NDManualObjects.modulemap */,
 				BA3E160E248E15BC00FA0E33 /* Info.plist */,
 			);
 			path = NDManualObjects;
