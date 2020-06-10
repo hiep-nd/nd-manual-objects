@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA241A942490D88E00CC5383 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA241A932490D88E00CC5383 /* Foundation.framework */; };
+		BA241A962490D89500CC5383 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA241A952490D89500CC5383 /* UIKit.framework */; };
 		BA3E1614248E15BD00FA0E33 /* NDManualObjects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3E160A248E15BC00FA0E33 /* NDManualObjects.framework */; };
 		BA3E1619248E15BD00FA0E33 /* NDManualObjectsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3E1618248E15BD00FA0E33 /* NDManualObjectsTests.m */; };
-		BA3E163F248E15D800FA0E33 /* UIView+NDManualObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3E1626248E15D700FA0E33 /* UIView+NDManualObjects.swift */; };
 		BA3E1641248E15D800FA0E33 /* NDManualView.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3E162A248E15D800FA0E33 /* NDManualView.h */; };
 		BA3E1642248E15D800FA0E33 /* NDManualCollectionViewCell.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA3E162B248E15D800FA0E33 /* NDManualCollectionViewCell.mm */; };
 		BA3E1643248E15D800FA0E33 /* NDManualViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA3E162C248E15D800FA0E33 /* NDManualViewController.mm */; };
@@ -101,12 +102,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BA241A932490D88E00CC5383 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BA241A952490D89500CC5383 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BA3E160A248E15BC00FA0E33 /* NDManualObjects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NDManualObjects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3E160E248E15BC00FA0E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3E1613248E15BD00FA0E33 /* NDManualObjectsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NDManualObjectsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3E1618248E15BD00FA0E33 /* NDManualObjectsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NDManualObjectsTests.m; sourceTree = "<group>"; };
 		BA3E161A248E15BD00FA0E33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA3E1626248E15D700FA0E33 /* UIView+NDManualObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+NDManualObjects.swift"; sourceTree = "<group>"; };
 		BA3E162A248E15D800FA0E33 /* NDManualView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDManualView.h; sourceTree = "<group>"; };
 		BA3E162B248E15D800FA0E33 /* NDManualCollectionViewCell.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NDManualCollectionViewCell.mm; sourceTree = "<group>"; };
 		BA3E162C248E15D800FA0E33 /* NDManualViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NDManualViewController.mm; sourceTree = "<group>"; };
@@ -139,6 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA241A942490D88E00CC5383 /* Foundation.framework in Frameworks */,
+				BA241A962490D89500CC5383 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +157,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA241A922490D88E00CC5383 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA241A952490D89500CC5383 /* UIKit.framework */,
+				BA241A932490D88E00CC5383 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA3E1600248E15BC00FA0E33 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +173,7 @@
 				BA3E160C248E15BC00FA0E33 /* NDManualObjects */,
 				BA3E1617248E15BD00FA0E33 /* NDManualObjectsTests */,
 				BA3E160B248E15BC00FA0E33 /* Products */,
+				BA241A922490D88E00CC5383 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,8 +189,10 @@
 		BA3E160C248E15BC00FA0E33 /* NDManualObjects */ = {
 			isa = PBXGroup;
 			children = (
-				BA3E1627248E15D800FA0E33 /* Core */,
-				BA3E1624248E15D700FA0E33 /* Swift */,
+				BA3E1654248E164200FA0E33 /* NDManualObjects.h */,
+				BA3E1629248E15D800FA0E33 /* Objects */,
+				BA3E163A248E15D800FA0E33 /* Utils */,
+				BA3E163D248E15D800FA0E33 /* Abstracts */,
 				BA3E160E248E15BC00FA0E33 /* Info.plist */,
 			);
 			path = NDManualObjects;
@@ -189,33 +205,6 @@
 				BA3E161A248E15BD00FA0E33 /* Info.plist */,
 			);
 			path = NDManualObjectsTests;
-			sourceTree = "<group>";
-		};
-		BA3E1624248E15D700FA0E33 /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				BA3E1625248E15D700FA0E33 /* Utils */,
-			);
-			path = Swift;
-			sourceTree = "<group>";
-		};
-		BA3E1625248E15D700FA0E33 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				BA3E1626248E15D700FA0E33 /* UIView+NDManualObjects.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		BA3E1627248E15D800FA0E33 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				BA3E1654248E164200FA0E33 /* NDManualObjects.h */,
-				BA3E1629248E15D800FA0E33 /* Objects */,
-				BA3E163A248E15D800FA0E33 /* Utils */,
-				BA3E163D248E15D800FA0E33 /* Abstracts */,
-			);
-			path = Core;
 			sourceTree = "<group>";
 		};
 		BA3E1629248E15D800FA0E33 /* Objects */ = {
@@ -403,7 +392,6 @@
 				BA3E1643248E15D800FA0E33 /* NDManualViewController.mm in Sources */,
 				BA3E1651248E15D800FA0E33 /* UIView+NDManualObjects.mm in Sources */,
 				BA3E1650248E15D800FA0E33 /* NDManualTableViewController.mm in Sources */,
-				BA3E163F248E15D800FA0E33 /* UIView+NDManualObjects.swift in Sources */,
 				BA3E1645248E15D800FA0E33 /* NDManualTabBarController.mm in Sources */,
 				BA3E1649248E15D800FA0E33 /* NDManualTableViewCell.mm in Sources */,
 			);
@@ -597,7 +585,6 @@
 		BA3E1622248E15BD00FA0E33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UKD7V9S9N;
 				INFOPLIST_FILE = NDManualObjectsTests/Info.plist;
@@ -615,7 +602,6 @@
 		BA3E1623248E15BD00FA0E33 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UKD7V9S9N;
 				INFOPLIST_FILE = NDManualObjectsTests/Info.plist;

@@ -1,4 +1,3 @@
 *~
 .DS_Store
-NDManualObjects.xcodeproj/project.xcworkspace/xcuserdata/**
-NDManualObjects.xcodeproj/xcuserdata/**
+**/xcuserdata/**
