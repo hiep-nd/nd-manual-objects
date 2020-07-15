@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		276D53C678E9EA9B245D61CA /* Pods_NDManualObjects_NDManualObjectsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7073D989E0655E69FE076F8A /* Pods_NDManualObjects_NDManualObjectsTests.framework */; };
+		2BF5517D2DDA5D665EB5FD60 /* Pods_NDManualObjects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02BEDC4F981374187E90554 /* Pods_NDManualObjects.framework */; };
 		BA241A942490D88E00CC5383 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA241A932490D88E00CC5383 /* Foundation.framework */; };
 		BA241A962490D89500CC5383 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA241A952490D89500CC5383 /* UIKit.framework */; };
 		BA241A9F24920FC900CC5383 /* UIViewController+NDManualObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = BA241A9D24920FC900CC5383 /* UIViewController+NDManualObjects.h */; };
@@ -106,6 +108,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3BFC44D83F403C324FCE8EE5 /* Pods-NDManualObjects.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDManualObjects.debug.xcconfig"; path = "Target Support Files/Pods-NDManualObjects/Pods-NDManualObjects.debug.xcconfig"; sourceTree = "<group>"; };
+		7073D989E0655E69FE076F8A /* Pods_NDManualObjects_NDManualObjectsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NDManualObjects_NDManualObjectsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA241A932490D88E00CC5383 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA241A952490D89500CC5383 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BA241A9A2490F22600CC5383 /* NDManualObjects.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = NDManualObjects.modulemap; sourceTree = "<group>"; };
@@ -141,6 +145,10 @@
 		BA3E1659248E16EA00FA0E33 /* .swift-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-format"; sourceTree = "<group>"; };
 		BA3E165A248E16EA00FA0E33 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		BA3E165B248E16EA00FA0E33 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C1E0DB24D719B05BEFF2D8E1 /* Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig"; path = "Target Support Files/Pods-NDManualObjects-NDManualObjectsTests/Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C20C56BB66E6828445EC3D4D /* Pods-NDManualObjects.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDManualObjects.release.xcconfig"; path = "Target Support Files/Pods-NDManualObjects/Pods-NDManualObjects.release.xcconfig"; sourceTree = "<group>"; };
+		C363EB0E1624F303231B1596 /* Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig"; path = "Target Support Files/Pods-NDManualObjects-NDManualObjectsTests/Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig"; sourceTree = "<group>"; };
+		F02BEDC4F981374187E90554 /* Pods_NDManualObjects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NDManualObjects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +158,7 @@
 			files = (
 				BA241A942490D88E00CC5383 /* Foundation.framework in Frameworks */,
 				BA241A962490D89500CC5383 /* UIKit.framework in Frameworks */,
+				2BF5517D2DDA5D665EB5FD60 /* Pods_NDManualObjects.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,17 +167,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3E1614248E15BD00FA0E33 /* NDManualObjects.framework in Frameworks */,
+				276D53C678E9EA9B245D61CA /* Pods_NDManualObjects_NDManualObjectsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F01D293ED33A5D5C271AA61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BFC44D83F403C324FCE8EE5 /* Pods-NDManualObjects.debug.xcconfig */,
+				C20C56BB66E6828445EC3D4D /* Pods-NDManualObjects.release.xcconfig */,
+				C1E0DB24D719B05BEFF2D8E1 /* Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig */,
+				C363EB0E1624F303231B1596 /* Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BA241A922490D88E00CC5383 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				BA241A952490D89500CC5383 /* UIKit.framework */,
 				BA241A932490D88E00CC5383 /* Foundation.framework */,
+				F02BEDC4F981374187E90554 /* Pods_NDManualObjects.framework */,
+				7073D989E0655E69FE076F8A /* Pods_NDManualObjects_NDManualObjectsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,6 +205,7 @@
 				BA3E1617248E15BD00FA0E33 /* NDManualObjectsTests */,
 				BA3E160B248E15BC00FA0E33 /* Products */,
 				BA241A922490D88E00CC5383 /* Frameworks */,
+				6F01D293ED33A5D5C271AA61 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -219,21 +244,21 @@
 			isa = PBXGroup;
 			children = (
 				BA3E162A248E15D800FA0E33 /* NDManualView.h */,
-				BA3E162B248E15D800FA0E33 /* NDManualCollectionViewCell.mm */,
-				BA3E162C248E15D800FA0E33 /* NDManualViewController.mm */,
+				BA3E1633248E15D800FA0E33 /* NDManualView.mm */,
 				BA3E162D248E15D800FA0E33 /* NDManualCollectionViewCell.h */,
+				BA3E162B248E15D800FA0E33 /* NDManualCollectionViewCell.mm */,
+				BA3E1635248E15D800FA0E33 /* NDManualTabBarController.h */,
 				BA3E162E248E15D800FA0E33 /* NDManualTabBarController.mm */,
-				BA3E162F248E15D800FA0E33 /* NDManualTableViewCell.h */,
+				BA3E1637248E15D800FA0E33 /* NDManualCollectionViewController.h */,
 				BA3E1630248E15D800FA0E33 /* NDManualCollectionViewController.mm */,
 				BA3E1631248E15D800FA0E33 /* NDManualObject.h */,
-				BA3E1632248E15D800FA0E33 /* NDManualTableViewCell.mm */,
-				BA3E1633248E15D800FA0E33 /* NDManualView.mm */,
 				BA3E1634248E15D800FA0E33 /* NDManualObject.mm */,
-				BA3E1635248E15D800FA0E33 /* NDManualTabBarController.h */,
+				BA3E162F248E15D800FA0E33 /* NDManualTableViewCell.h */,
+				BA3E1632248E15D800FA0E33 /* NDManualTableViewCell.mm */,
 				BA3E1636248E15D800FA0E33 /* NDManualTableViewController.h */,
-				BA3E1637248E15D800FA0E33 /* NDManualCollectionViewController.h */,
-				BA3E1638248E15D800FA0E33 /* NDManualViewController.h */,
 				BA3E1639248E15D800FA0E33 /* NDManualTableViewController.mm */,
+				BA3E1638248E15D800FA0E33 /* NDManualViewController.h */,
+				BA3E162C248E15D800FA0E33 /* NDManualViewController.mm */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -298,6 +323,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA3E161E248E15BD00FA0E33 /* Build configuration list for PBXNativeTarget "NDManualObjects" */;
 			buildPhases = (
+				5551CEFDEB0F5A49B11FA103 /* [CP] Check Pods Manifest.lock */,
 				BA3E1605248E15BC00FA0E33 /* Headers */,
 				BA3E1661248E179F00FA0E33 /* Copy Files Abstracts */,
 				BA3E1662248E17B000FA0E33 /* Copy Files Objects */,
@@ -319,9 +345,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA3E1621248E15BD00FA0E33 /* Build configuration list for PBXNativeTarget "NDManualObjectsTests" */;
 			buildPhases = (
+				E26F2616B5653E8E207455EB /* [CP] Check Pods Manifest.lock */,
 				BA3E160F248E15BD00FA0E33 /* Sources */,
 				BA3E1610248E15BD00FA0E33 /* Frameworks */,
 				BA3E1611248E15BD00FA0E33 /* Resources */,
+				7ED430418FE6E7352DE766BB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -390,6 +418,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5551CEFDEB0F5A49B11FA103 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NDManualObjects-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7ED430418FE6E7352DE766BB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NDManualObjects-NDManualObjectsTests/Pods-NDManualObjects-NDManualObjectsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NDManualObjects-NDManualObjectsTests/Pods-NDManualObjects-NDManualObjectsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NDManualObjects-NDManualObjectsTests/Pods-NDManualObjects-NDManualObjectsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E26F2616B5653E8E207455EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NDManualObjects-NDManualObjectsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BA3E1606248E15BC00FA0E33 /* Sources */ = {
@@ -546,6 +638,7 @@
 		};
 		BA3E161F248E15BD00FA0E33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BFC44D83F403C324FCE8EE5 /* Pods-NDManualObjects.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -571,6 +664,7 @@
 		};
 		BA3E1620248E15BD00FA0E33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C20C56BB66E6828445EC3D4D /* Pods-NDManualObjects.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -596,6 +690,7 @@
 		};
 		BA3E1622248E15BD00FA0E33 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1E0DB24D719B05BEFF2D8E1 /* Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UKD7V9S9N;
@@ -613,6 +708,7 @@
 		};
 		BA3E1623248E15BD00FA0E33 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C363EB0E1624F303231B1596 /* Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UKD7V9S9N;

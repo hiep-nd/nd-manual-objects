@@ -19,4 +19,7 @@ Pod::Spec.new do |s|
   s.header_mappings_dir = 'NDManualObjects'
   s.framework = 'Foundation', 'UIKit'
   s.module_map = 'NDManualObjects/NDManualObjects.modulemap'
+  
+  s.dependency 'NDLog'
+  s.dependency 'NDUtils'
 end

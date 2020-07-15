@@ -29,6 +29,15 @@
   return self;
 }
 
+- (void)viewDidLoad {
+  [super viewDidLoad];
+
+  if (self.viewDidLoadHandler) {
+    self.viewDidLoadHandler(self);
+    self.viewDidLoadHandler = nil;
+  }
+}
+
 // MARK: - NDManualObject
 
 - (void)manualInit {

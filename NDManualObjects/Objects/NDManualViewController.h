@@ -13,6 +13,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NDManualViewController : UIViewController <NDManualObject>
+
+@property(nonatomic, copy) void (^_Nullable viewDidLoadHandler)
+    (__kindof NDManualViewController*);
+
 @end
 
 NS_ASSUME_NONNULL_END

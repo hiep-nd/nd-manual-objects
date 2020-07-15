@@ -1,0 +1,22 @@
+PODS:
+  - NDLog (0.0.3)
+  - NDUtils (0.0.2):
+    - NDLog
+
+DEPENDENCIES:
+  - NDLog (from `../NDLog`)
+  - NDUtils (from `../NDUtils`)
+
+EXTERNAL SOURCES:
+  NDLog:
+    :path: "../NDLog"
+  NDUtils:
+    :path: "../NDUtils"
+
+SPEC CHECKSUMS:
+  NDLog: 5a87bd8d8dffeb8d147849e5257f46091feacede
+  NDUtils: 52a80148646a0906a2449c627ad69bf59ad4ac91
+
+PODFILE CHECKSUM: 2f0571b00b0448d4fdab5909d8935d208d7888bf
+
+COCOAPODS: 1.9.1
