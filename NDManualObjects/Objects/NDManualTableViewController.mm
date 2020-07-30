@@ -13,18 +13,18 @@
 
 @implementation NDManualTableViewController
 
-- (void)registerClass:(Class)cls identifier:(NSString*)identifier {
+- (void)registerIdentifier:(NSString*)identifier class:(Class)cls {
   [self.tableView registerClass:cls forCellReuseIdentifier:identifier];
 }
 
 - (void)registerClasses:(NSDictionary<NSString*, Class>*)classes {
   [classes
       enumerateKeysAndObjectsUsingBlock:^(NSString* key, Class obj, BOOL*) {
-        [self registerClass:obj identifier:key];
+        [self registerIdentifier:key class:obj];
       }];
 }
 
-- (void)registerNibName:(NSString*)nibName identifier:(NSString*)identifier {
+- (void)registerIdentifier:(NSString*)identifier nibName:(NSString*)nibName {
   [self.tableView registerNib:[UINib nibWithNibName:nibName bundle:nil]
        forCellReuseIdentifier:identifier];
 }
@@ -32,12 +32,11 @@
 - (void)registerNibNames:(NSDictionary<NSString*, NSString*>*)nibNames {
   [nibNames enumerateKeysAndObjectsUsingBlock:^(NSString* key, NSString* obj,
                                                 BOOL* stop) {
-    [self registerNibName:obj identifier:key];
+    [self registerIdentifier:key nibName:obj];
   }];
 }
 
 // MARK: - UITableViewController
-
 - (instancetype)initWithStyle:(UITableViewStyle)style {
   self = [super initWithStyle:style];
   if (self) {
@@ -77,7 +76,7 @@
 - (NSInteger)tableView:(UITableView*)tableView
     numberOfRowsInSection:(NSInteger)section {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.numberOfRowsInSectionHandler, self, section);
   }
@@ -88,7 +87,7 @@
 - (UITableViewCell*)tableView:(UITableView*)tableView
         cellForRowAtIndexPath:(NSIndexPath*)indexPath {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.cellForRowAtIndexPathHandler, self, indexPath);
   }
@@ -98,7 +97,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView*)tableView {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.numberOfSectionsHandler, self);
   }
@@ -109,7 +108,7 @@
 - (NSString*)tableView:(UITableView*)tableView
     titleForHeaderInSection:(NSInteger)section {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.titleForHeaderInSectionHandler, self, section);
   }
@@ -120,7 +119,7 @@
 - (nullable NSString*)tableView:(UITableView*)tableView
         titleForFooterInSection:(NSInteger)section {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.titleForFooterInSectionHandler, self, section);
   }
@@ -131,7 +130,7 @@
 - (BOOL)tableView:(UITableView*)tableView
     canEditRowAtIndexPath:(NSIndexPath*)indexPath {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.canEditRowAtIndexPathHandler, self, indexPath);
   }
@@ -142,7 +141,7 @@
 - (BOOL)tableView:(UITableView*)tableView
     canMoveRowAtIndexPath:(NSIndexPath*)indexPath {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.canMoveRowAtIndexPathHandler, self, indexPath);
   }
@@ -152,7 +151,7 @@
 
 - (NSArray<NSString*>*)sectionIndexTitlesForTableView:(UITableView*)tableView {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.sectionIndexTitlesHandler, self);
   }
@@ -164,7 +163,7 @@
     sectionForSectionIndexTitle:(NSString*)title
                         atIndex:(NSInteger)index {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.sectionForSectionIndexTitleAtIndexHandler, self,
                          title, index);
@@ -177,7 +176,7 @@
     commitEditingStyle:(UITableViewCellEditingStyle)editingStyle
      forRowAtIndexPath:(NSIndexPath*)indexPath {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.commitEditingStyleForRowAtIndexPathHandler, self,
                          editingStyle, indexPath);
@@ -188,7 +187,7 @@
     moveRowAtIndexPath:(NSIndexPath*)sourceIndexPath
            toIndexPath:(NSIndexPath*)destinationIndexPath {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.moveRowAtIndexPathToIndexPathHandler, self,
                          sourceIndexPath, destinationIndexPath);
@@ -200,7 +199,7 @@
       willDisplayCell:(UITableViewCell*)cell
     forRowAtIndexPath:(NSIndexPath*)indexPath {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' delegate.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' delegate.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.willDisplayCellForRowAtIndexPathHandler, self,
                          cell, indexPath);
@@ -210,7 +209,7 @@
 - (CGFloat)tableView:(UITableView*)tableView
     heightForRowAtIndexPath:(NSIndexPath*)indexPath {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' delegate.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' delegate.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.heightForRowAtIndexPathHandler, self, indexPath);
   }
@@ -221,7 +220,7 @@
 - (void)tableView:(UITableView*)tableView
     didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' delegate.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' delegate.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.didSelectRowAtIndexPathHandler, self, indexPath);
   }
@@ -230,7 +229,7 @@
 - (UITableViewCellEditingStyle)tableView:(UITableView*)tableView
            editingStyleForRowAtIndexPath:(NSIndexPath*)indexPath {
   if (tableView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' delegate.", self, tableView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' delegate.", self, tableView);
   } else {
     NDCallAndReturnIfCan(self.editingStyleForRowAtIndexPathHandler, self,
                          indexPath);
@@ -245,7 +244,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView*)scrollView {
   if (scrollView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' delegate.", self, scrollView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' delegate.", self, scrollView);
   } else {
     NDCallAndReturnIfCan(self.didScrollHandler, self);
   }
@@ -255,7 +254,7 @@
                      withVelocity:(CGPoint)velocity
               targetContentOffset:(inout CGPoint*)targetContentOffset {
   if (scrollView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' delegate.", self, scrollView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' delegate.", self, scrollView);
   } else {
     NDCallAndReturnIfCan(
         self.willEndDraggingWithVelocityTargetContentOffsetHandler, self,
@@ -266,7 +265,7 @@
 - (void)scrollViewDidEndDragging:(UIScrollView*)scrollView
                   willDecelerate:(BOOL)decelerate {
   if (scrollView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' delegate.", self, scrollView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' delegate.", self, scrollView);
   } else {
     NDCallAndReturnIfCan(self.didEndDraggingWillDecelerateHandler, self,
                          decelerate);
@@ -275,7 +274,7 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView*)scrollView {
   if (scrollView != self.tableView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' delegate.", self, scrollView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' delegate.", self, scrollView);
   } else {
     NDCallAndReturnIfCan(self.didEndDeceleratingHandler, self);
   }

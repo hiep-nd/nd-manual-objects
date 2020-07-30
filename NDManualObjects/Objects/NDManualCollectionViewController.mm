@@ -80,8 +80,8 @@
 - (NSInteger)collectionView:(UICollectionView*)collectionView
      numberOfItemsInSection:(NSInteger)section {
   if (collectionView != self.collectionView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self,
-                    collectionView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self,
+                       collectionView);
   } else {
     NDCallAndReturnIfCan(self.numberOfItemsInSectionHandler, self, section);
   }
@@ -92,8 +92,8 @@
 - (UICollectionViewCell*)collectionView:(UICollectionView*)collectionView
                  cellForItemAtIndexPath:(NSIndexPath*)indexPath {
   if (collectionView != self.collectionView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self,
-                    collectionView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self,
+                       collectionView);
   } else {
     NDCallAndReturnIfCan(self.cellForItemAtIndexPathHandler, self, indexPath);
   }
@@ -104,8 +104,8 @@
 - (NSInteger)numberOfSectionsInCollectionView:
     (UICollectionView*)collectionView {
   if (collectionView != self.collectionView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' datasource.", self,
-                    collectionView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self,
+                       collectionView);
   } else {
     NDCallAndReturnIfCan(self.numberOfSectionsHandler, self);
   }
@@ -117,7 +117,8 @@
 - (void)collectionView:(UICollectionView*)collectionView
     didSelectItemAtIndexPath:(NSIndexPath*)indexPath {
   if (collectionView != self.collectionView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' delegate.", self, collectionView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' delegate.", self,
+                       collectionView);
   } else {
     NDCallAndReturnIfCan(self.didSelectItemAtIndexPathHandler, self, indexPath);
   }
@@ -126,7 +127,7 @@
 // MARK: -UICollectionViewController's scroll delegate
 - (void)scrollViewDidScroll:(UIScrollView*)scrollView {
   if (scrollView != self.collectionView) {
-    NDAssertFailure(@"Misused of '%@' as '%@' delegate.", self, scrollView);
+    NDAssertionFailure(@"Misused of '%@' as '%@' delegate.", self, scrollView);
   } else {
     NDCallAndReturnIfCan(self.didScrollHandler, self);
   }

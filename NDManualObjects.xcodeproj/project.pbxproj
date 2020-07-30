@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -51,6 +51,8 @@
 		BA3E166B248E180E00FA0E33 /* NDManualCollectionViewController.h in Copy Files Objects */ = {isa = PBXBuildFile; fileRef = BA3E1637248E15D800FA0E33 /* NDManualCollectionViewController.h */; };
 		BA3E166C248E180E00FA0E33 /* NDManualViewController.h in Copy Files Objects */ = {isa = PBXBuildFile; fileRef = BA3E1638248E15D800FA0E33 /* NDManualViewController.h */; };
 		BA3E166D248E183400FA0E33 /* UIView+NDManualObjects.h in Copy Files Utils */ = {isa = PBXBuildFile; fileRef = BA3E163C248E15D800FA0E33 /* UIView+NDManualObjects.h */; };
+		BA98C19924C7EA61009E7CEB /* NDAutolayoutUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BA98C19724C7EA61009E7CEB /* NDAutolayoutUtils.h */; };
+		BA98C19A24C7EA61009E7CEB /* NDAutolayoutUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA98C19824C7EA61009E7CEB /* NDAutolayoutUtils.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,8 @@
 		BA3E1659248E16EA00FA0E33 /* .swift-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-format"; sourceTree = "<group>"; };
 		BA3E165A248E16EA00FA0E33 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		BA3E165B248E16EA00FA0E33 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BA98C19724C7EA61009E7CEB /* NDAutolayoutUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDAutolayoutUtils.h; sourceTree = "<group>"; };
+		BA98C19824C7EA61009E7CEB /* NDAutolayoutUtils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NDAutolayoutUtils.mm; sourceTree = "<group>"; };
 		C1E0DB24D719B05BEFF2D8E1 /* Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig"; path = "Target Support Files/Pods-NDManualObjects-NDManualObjectsTests/Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C20C56BB66E6828445EC3D4D /* Pods-NDManualObjects.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDManualObjects.release.xcconfig"; path = "Target Support Files/Pods-NDManualObjects/Pods-NDManualObjects.release.xcconfig"; sourceTree = "<group>"; };
 		C363EB0E1624F303231B1596 /* Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig"; path = "Target Support Files/Pods-NDManualObjects-NDManualObjectsTests/Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -182,7 +186,6 @@
 				C1E0DB24D719B05BEFF2D8E1 /* Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig */,
 				C363EB0E1624F303231B1596 /* Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -266,6 +269,7 @@
 		BA3E163A248E15D800FA0E33 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BA98C19624C7EA2B009E7CEB /* Privates */,
 				BA3E163B248E15D800FA0E33 /* UIView+NDManualObjects.mm */,
 				BA3E163C248E15D800FA0E33 /* UIView+NDManualObjects.h */,
 				BA241A9D24920FC900CC5383 /* UIViewController+NDManualObjects.h */,
@@ -294,6 +298,15 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
+		BA98C19624C7EA2B009E7CEB /* Privates */ = {
+			isa = PBXGroup;
+			children = (
+				BA98C19724C7EA61009E7CEB /* NDAutolayoutUtils.h */,
+				BA98C19824C7EA61009E7CEB /* NDAutolayoutUtils.mm */,
+			);
+			path = Privates;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -311,6 +324,7 @@
 				BA3E164E248E15D800FA0E33 /* NDManualCollectionViewController.h in Headers */,
 				BA3E1646248E15D800FA0E33 /* NDManualTableViewCell.h in Headers */,
 				BA3E1648248E15D800FA0E33 /* NDManualObject.h in Headers */,
+				BA98C19924C7EA61009E7CEB /* NDAutolayoutUtils.h in Headers */,
 				BA3E164F248E15D800FA0E33 /* NDManualViewController.h in Headers */,
 				BA3E1653248E15D800FA0E33 /* NDManualObject.h in Headers */,
 			);
@@ -496,6 +510,7 @@
 				BA3E1643248E15D800FA0E33 /* NDManualViewController.mm in Sources */,
 				BA3E1651248E15D800FA0E33 /* UIView+NDManualObjects.mm in Sources */,
 				BA3E1650248E15D800FA0E33 /* NDManualTableViewController.mm in Sources */,
+				BA98C19A24C7EA61009E7CEB /* NDAutolayoutUtils.mm in Sources */,
 				BA3E1645248E15D800FA0E33 /* NDManualTabBarController.mm in Sources */,
 				BA3E1649248E15D800FA0E33 /* NDManualTableViewCell.mm in Sources */,
 			);

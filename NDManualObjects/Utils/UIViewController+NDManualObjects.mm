@@ -8,6 +8,12 @@
 
 #import <NDManualObjects/Utils/UIViewController+NDManualObjects.h>
 
+#import "Privates/NDAutolayoutUtils.h"
+
+#import <NDLog/NDLog.h>
+
+using namespace nd;
+
 @implementation UIViewController (NDManualObjects)
 
 - (void)nd_addChildViewControllers:
@@ -34,6 +40,18 @@
       [vc didMoveToParentViewController:self];
     }
   }
+}
+
+- (void)nd_fillWithContentViewController:
+    (UIViewController*)contentViewController {
+  if (!contentViewController) {
+    NDAssertionFailure(@"Can not fill with content view controller: '%@'.",
+                       contentViewController);
+    return;
+  }
+
+  [self nd_addChildViewControllers:@[ contentViewController ]];
+  AnchorFill(self.view, contentViewController.view);
 }
 
 @end

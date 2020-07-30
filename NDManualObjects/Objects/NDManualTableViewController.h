@@ -82,10 +82,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) void (^_Nullable didEndDeceleratingHandler)
     (__kindof NDManualTableViewController*);
 
-- (void)registerClass:(Class)cls identifier:(NSString*)identifier;
-- (void)registerClasses:(NSDictionary<NSString*, Class>*)classes;
-- (void)registerNibName:(NSString*)nibName identifier:(NSString*)identifier;
-- (void)registerNibNames:(NSDictionary<NSString*, NSString*>*)nibNames;
+- (void)registerIdentifier:(NSString*)identifier
+                     class:(Class)cls
+    NS_SWIFT_NAME(register(identifier:class:));
+- (void)registerClasses:(NSDictionary<NSString*, Class>*)classes
+    NS_SWIFT_NAME(register(classes:));
+- (void)registerIdentifier:(NSString*)identifier
+                   nibName:(NSString*)nibName
+    NS_SWIFT_NAME(register(identifier:nibName:));
+- (void)registerNibNames:(NSDictionary<NSString*, NSString*>*)nibNames
+    NS_SWIFT_NAME(register(nibNames:));
 
 @end
 

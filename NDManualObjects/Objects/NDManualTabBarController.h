@@ -13,6 +13,12 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NDManualTabBarController : UITabBarController <NDManualObject>
+
+// MARK: -UITabBarController's tab bar delegate handlers
+// called when a new view is selected by the user (but not programatically)
+@property(nonatomic, copy) void (^_Nullable didSelectItemHandler)
+    (__kindof NDManualTabBarController*, UITabBarItem*);
+
 @end
 
 NS_ASSUME_NONNULL_END

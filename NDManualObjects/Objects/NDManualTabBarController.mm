@@ -8,10 +8,12 @@
 
 #import <NDManualObjects/Objects/NDManualTabBarController.h>
 
+#import <NDLog/NDLog.h>
+#import <NDUtils/NDUtils.h>
+
 @implementation NDManualTabBarController
 
 // MARK: - UITabBarController
-
 - (instancetype)initWithNibName:(NSString*)nibNameOrNil
                          bundle:(NSBundle*)nibBundleOrNil {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,8 +31,16 @@
   return self;
 }
 
-// MARK: - NDManualObject
+// MARK: -UITabBarController's tab bar delegate
+- (void)tabBar:(UITabBar*)tabBar didSelectItem:(UITabBarItem*)item {
+  if (tabBar != self.tabBar) {
+    NDAssertionFailure(@"Misused of '%@' as '%@' delegate.", self, tabBar);
+  } else {
+    NDCallAndReturnIfCan(self.didSelectItemHandler, self, item);
+  }
+}
 
+// MARK: - NDManualObject
 - (void)manualInit {
 }
 

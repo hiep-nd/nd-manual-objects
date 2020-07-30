@@ -23,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
     translatesAutoresizingMaskIntoConstraints:
         (NSNumber* _Nullable)translatesAutoresizingMaskIntoConstraints
     NS_REFINED_FOR_SWIFT;
+- (void)nd_fillWithContentViewController:
+    (UIViewController*)contentViewController NS_SWIFT_NAME(nd_fill(with:));
 
 @end
 

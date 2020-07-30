@@ -8,6 +8,12 @@
 
 #import <NDManualObjects/Utils/UIView+NDManualObjects.h>
 
+#import "Privates/NDAutolayoutUtils.h"
+
+#import <NDLog/NDLog.h>
+
+using namespace nd;
+
 @implementation UIView (NDManualObjects)
 
 - (void)nd_addSubviews:(NSArray<UIView*>*)views {
@@ -28,6 +34,16 @@
       [self addSubview:v];
     }
   }
+}
+
+- (void)nd_fillWithContentView:(UIView*)contentView {
+  if (!contentView) {
+    NDAssertionFailure(@"Can not fill with content view: '%@'.", contentView);
+    return;
+  }
+
+  [self nd_addSubviews:@[ contentView ]];
+  AnchorFill(self, contentView);
 }
 
 @end
