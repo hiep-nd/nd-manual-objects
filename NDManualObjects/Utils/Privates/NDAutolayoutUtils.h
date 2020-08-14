@@ -11,7 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 namespace nd {
-inline void AnchorFill(UIView* container, UIView* content) {
+template <typename T1, typename T2>
+inline void AnchorFill(T1* _Nonnull container, T2* _Nonnull content) {
   [NSLayoutConstraint activateConstraints:@[
     [container.leadingAnchor constraintEqualToAnchor:content.leadingAnchor],
     [container.trailingAnchor constraintEqualToAnchor:content.trailingAnchor],

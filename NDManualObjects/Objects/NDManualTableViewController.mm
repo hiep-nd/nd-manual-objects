@@ -11,7 +11,23 @@
 #import <NDLog/NDLog.h>
 #import <NDUtils/NDUtils.h>
 
-@implementation NDManualTableViewController
+#import <map>
+
+using namespace std;
+
+namespace {
+struct cmpNSString {
+  bool operator()(NSString* lhs, NSString* rhs) const {
+    return [lhs compare:rhs] == NSOrderedAscending;
+  }
+};
+}
+
+@implementation NDManualTableViewController {
+  map<NSString*, UITableViewCell*, cmpNSString> _staticCells;
+  map<UITableViewCell*, NSString*> _staticIdentifiers;
+  NSInteger _performBatchUpdatesCount;
+}
 
 - (void)registerIdentifier:(NSString*)identifier class:(Class)cls {
   [self.tableView registerClass:cls forCellReuseIdentifier:identifier];
@@ -88,8 +104,18 @@
         cellForRowAtIndexPath:(NSIndexPath*)indexPath {
   if (tableView != self.tableView) {
     NDAssertionFailure(@"Misused of '%@' as '%@' datasource.", self, tableView);
-  } else {
-    NDCallAndReturnIfCan(self.cellForRowAtIndexPathHandler, self, indexPath);
+  }
+
+  if (self.cellReusableIdentifierForRowAtIndexPathHandler) {
+    auto identifier =
+        self.cellReusableIdentifierForRowAtIndexPathHandler(self, indexPath);
+    if (identifier) {
+      auto cell = [self dequeueReusableCellWithIdentifier:identifier
+                                             forIndexPath:indexPath];
+      NDCallIfCan(self.prepareCellForRowAtIndexPathHandler, self, cell,
+                  indexPath);
+      return cell;
+    }
   }
 
   return [[UITableViewCell alloc] init];
@@ -280,6 +306,110 @@
   }
 }
 
+// MARK: - Static cells
+- (void)registerIdentifier:(NSString*)identifier
+                      cell:(__kindof UITableViewCell*)cell {
+  if (!identifier) {
+    NDAssertionFailure(@"Can not register identifier: '%@' to '%@'.",
+                       identifier, self);
+    return;
+  }
+
+  if (cell) {
+    auto oldIdentifierIt = _staticIdentifiers.find(cell);
+    if (oldIdentifierIt != _staticIdentifiers.end()) {
+      if ([oldIdentifierIt->second isEqual:identifier]) {
+        return;
+      }
+
+      _staticCells.erase(oldIdentifierIt->second);
+    }
+
+    identifier = identifier.copy;
+    _staticIdentifiers[cell] = identifier;
+    _staticCells[identifier] = cell;
+  } else {
+    auto oldCellIt = _staticCells.find(identifier);
+    if (oldCellIt == _staticCells.end()) {
+      return;
+    }
+
+    _staticIdentifiers.erase(oldCellIt->second);
+    _staticCells.erase(oldCellIt);
+  }
+}
+
+- (void)registerCells:
+    (NSDictionary<NSString*, __kindof UITableViewCell*>*)cells {
+  [cells enumerateKeysAndObjectsUsingBlock:^(NSString* key,
+                                             UITableViewCell* obj, BOOL*) {
+    [self registerIdentifier:key cell:obj];
+  }];
+}
+
+- (void)performBatchUpdates:(void(NS_NOESCAPE ^ _Nullable)(void))updates {
+  auto updatesWithTracking = ^{
+    self->_performBatchUpdatesCount++;
+    NDCallIfCan(updates);
+    self->_performBatchUpdatesCount--;
+  };
+  if (@available(iOS 11, tvOS 11, *)) {
+    [self.tableView performBatchUpdates:updatesWithTracking completion:nil];
+  } else {
+    [self.tableView beginUpdates];
+    updatesWithTracking();
+    [self.tableView endUpdates];
+  }
+}
+
+- (BOOL)isPerformingBatchUpdates {
+  return _performBatchUpdatesCount > 0;
+}
+
+- (void)reloadRowsAtIndexPaths:(NSArray<NSIndexPath*>*)indexPaths
+              withRowAnimation:(UITableViewRowAnimation)animation {
+  if (_staticCells.empty()) {
+    [self.tableView reloadRowsAtIndexPaths:indexPaths
+                          withRowAnimation:animation];
+    return;
+  }
+
+  NSMutableArray* builder =
+      [[NSMutableArray alloc] initWithCapacity:indexPaths.count];
+  [indexPaths
+      enumerateObjectsUsingBlock:^(NSIndexPath* obj, NSUInteger, BOOL*) {
+        auto cell = [self.tableView cellForRowAtIndexPath:obj];
+        if (cell) {
+          auto staticIdentifierIt = self->_staticIdentifiers.find(cell);
+          if (staticIdentifierIt != self->_staticIdentifiers.end() &&
+              [staticIdentifierIt->second
+                  isEqual:self.cellReusableIdentifierForRowAtIndexPathHandler(
+                              self, obj)]) {
+            return;
+          }
+        }
+
+        [builder addObject:obj];
+      }];
+  if (builder.count != indexPaths.count && !self.isPerformingBatchUpdates) {
+    // relayout cells
+    [self performBatchUpdates:nil];
+  }
+  [self.tableView reloadRowsAtIndexPaths:builder withRowAnimation:animation];
+}
+
+- (__kindof UITableViewCell*)
+    dequeueReusableCellWithIdentifier:(NSString*)identifier
+                         forIndexPath:(NSIndexPath*)indexPath {
+  if (identifier) {
+    auto cell = _staticCells[identifier];
+    if (cell) {
+      return cell;
+    }
+  }
+  return [self.tableView dequeueReusableCellWithIdentifier:identifier
+                                              forIndexPath:indexPath];
+}
 // MARK: - NDManualObject
 
 - (void)manualInit {

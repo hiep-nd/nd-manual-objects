@@ -37,13 +37,25 @@ using namespace nd;
 }
 
 - (void)nd_fillWithContentView:(UIView*)contentView {
+  AddAndAnchor(self, self, contentView);
+}
+
+- (void)nd_fillMarginWithContentView:(UIView*)contentView {
+  AddAndAnchor(self, self.layoutMarginsGuide, contentView);
+}
+
+namespace {
+template <typename T>
+inline void AddAndAnchor(UIView* container, T* anchor, UIView* contentView) {
   if (!contentView) {
-    NDAssertionFailure(@"Can not fill with content view: '%@'.", contentView);
+    NDCAssertionFailure(@"Can not fill view: '%@' with content view: '%@'.",
+                        container, contentView);
     return;
   }
 
-  [self nd_addSubviews:@[ contentView ]];
-  AnchorFill(self, contentView);
+  [container nd_addSubviews:@[ contentView ]];
+  AnchorFill(anchor, contentView);
+}
 }
 
 @end

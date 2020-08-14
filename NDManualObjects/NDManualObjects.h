@@ -16,6 +16,7 @@ FOUNDATION_EXPORT const unsigned char NDManualObjectsVersionString[];
 
 #import <NDManualObjects/Abstracts/NDManualObject.h>
 
+#import <NDManualObjects/Objects/NDLoading.h>
 #import <NDManualObjects/Objects/NDManualCollectionViewCell.h>
 #import <NDManualObjects/Objects/NDManualCollectionViewController.h>
 #import <NDManualObjects/Objects/NDManualObject.h>

@@ -21,9 +21,16 @@ NS_ASSUME_NONNULL_BEGIN
 // MARK: -UITableViewController's datasource handlers
 @property(nonatomic, copy) NSInteger (^_Nullable numberOfRowsInSectionHandler)
     (__kindof NDManualTableViewController*, NSInteger);
+
 @property(nonatomic, copy)
-    __kindof UITableViewCell* (^_Nullable cellForRowAtIndexPathHandler)
+    NSString* (^_Nullable cellReusableIdentifierForRowAtIndexPathHandler)
         (__kindof NDManualTableViewController*, NSIndexPath*);
+
+@property(nonatomic, copy) void (^_Nullable prepareCellForRowAtIndexPathHandler)
+    (__kindof NDManualTableViewController*,
+     __kindof UITableViewCell*,
+     NSIndexPath*);
+
 @property(nonatomic, copy) NSInteger (^_Nullable numberOfSectionsHandler)
     (__kindof NDManualTableViewController*);
 @property(nonatomic, copy)
@@ -82,16 +89,37 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, copy) void (^_Nullable didEndDeceleratingHandler)
     (__kindof NDManualTableViewController*);
 
+// MARK: - Prototype cells
 - (void)registerIdentifier:(NSString*)identifier
-                     class:(Class)cls
+                     class:(Class _Nullable)cls
     NS_SWIFT_NAME(register(identifier:class:));
 - (void)registerClasses:(NSDictionary<NSString*, Class>*)classes
     NS_SWIFT_NAME(register(classes:));
 - (void)registerIdentifier:(NSString*)identifier
-                   nibName:(NSString*)nibName
+                   nibName:(NSString* _Nullable)nibName
     NS_SWIFT_NAME(register(identifier:nibName:));
 - (void)registerNibNames:(NSDictionary<NSString*, NSString*>*)nibNames
     NS_SWIFT_NAME(register(nibNames:));
+
+// MARK: - Static cells
+- (void)registerIdentifier:(NSString*)identifier
+                      cell:(__kindof UITableViewCell* _Nullable)cell
+    NS_SWIFT_NAME(register(identifier:cell:));
+- (void)registerCells:(NSDictionary<NSString*, __kindof UITableViewCell*>*)cells
+    NS_SWIFT_NAME(register(cells:));
+
+/// allows multiple insert/delete/reload/move calls to be animated
+/// simultaneously. Nestable.
+- (void)performBatchUpdates:(void(NS_NOESCAPE ^ _Nullable)(void))updates;
+
+- (void)reloadRowsAtIndexPaths:(NSArray<NSIndexPath*>*)indexPaths
+              withRowAnimation:(UITableViewRowAnimation)animation;
+
+/// dequeue method guarantees a cell is returned and resized properly, assuming
+/// identifier is registered. Use this instead of tableview's.
+- (__kindof UITableViewCell*)
+    dequeueReusableCellWithIdentifier:(NSString*)identifier
+                         forIndexPath:(NSIndexPath*)indexPath;
 
 @end
 
