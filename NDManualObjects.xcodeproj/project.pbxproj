@@ -11,9 +11,6 @@
 		2BF5517D2DDA5D665EB5FD60 /* Pods_NDManualObjects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F02BEDC4F981374187E90554 /* Pods_NDManualObjects.framework */; };
 		BA241A942490D88E00CC5383 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA241A932490D88E00CC5383 /* Foundation.framework */; };
 		BA241A962490D89500CC5383 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA241A952490D89500CC5383 /* UIKit.framework */; };
-		BA241A9F24920FC900CC5383 /* UIViewController+NDManualObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = BA241A9D24920FC900CC5383 /* UIViewController+NDManualObjects.h */; };
-		BA241AA024920FC900CC5383 /* UIViewController+NDManualObjects.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA241A9E24920FC900CC5383 /* UIViewController+NDManualObjects.mm */; };
-		BA241AA1249212EB00CC5383 /* UIViewController+NDManualObjects.h in Copy Files Utils */ = {isa = PBXBuildFile; fileRef = BA241A9D24920FC900CC5383 /* UIViewController+NDManualObjects.h */; };
 		BA337A0F24E3FFF00061B1DC /* NDLoading.h in Headers */ = {isa = PBXBuildFile; fileRef = BA337A0D24E3FFF00061B1DC /* NDLoading.h */; };
 		BA337A1024E3FFF00061B1DC /* NDLoading.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA337A0E24E3FFF00061B1DC /* NDLoading.mm */; };
 		BA337A1124E4012F0061B1DC /* NDLoading.h in Copy Files Objects */ = {isa = PBXBuildFile; fileRef = BA337A0D24E3FFF00061B1DC /* NDLoading.h */; };
@@ -35,8 +32,6 @@
 		BA3E164E248E15D800FA0E33 /* NDManualCollectionViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3E1637248E15D800FA0E33 /* NDManualCollectionViewController.h */; };
 		BA3E164F248E15D800FA0E33 /* NDManualViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3E1638248E15D800FA0E33 /* NDManualViewController.h */; };
 		BA3E1650248E15D800FA0E33 /* NDManualTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA3E1639248E15D800FA0E33 /* NDManualTableViewController.mm */; };
-		BA3E1651248E15D800FA0E33 /* UIView+NDManualObjects.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA3E163B248E15D800FA0E33 /* UIView+NDManualObjects.mm */; };
-		BA3E1652248E15D800FA0E33 /* UIView+NDManualObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3E163C248E15D800FA0E33 /* UIView+NDManualObjects.h */; };
 		BA3E1653248E15D800FA0E33 /* NDManualObject.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3E163E248E15D800FA0E33 /* NDManualObject.h */; };
 		BA3E1655248E164200FA0E33 /* NDManualObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = BA3E1654248E164200FA0E33 /* NDManualObjects.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA3E165C248E16EA00FA0E33 /* NDManualObjects.podspec in Resources */ = {isa = PBXBuildFile; fileRef = BA3E1657248E16EA00FA0E33 /* NDManualObjects.podspec */; };
@@ -53,9 +48,6 @@
 		BA3E166A248E180E00FA0E33 /* NDManualTableViewController.h in Copy Files Objects */ = {isa = PBXBuildFile; fileRef = BA3E1636248E15D800FA0E33 /* NDManualTableViewController.h */; };
 		BA3E166B248E180E00FA0E33 /* NDManualCollectionViewController.h in Copy Files Objects */ = {isa = PBXBuildFile; fileRef = BA3E1637248E15D800FA0E33 /* NDManualCollectionViewController.h */; };
 		BA3E166C248E180E00FA0E33 /* NDManualViewController.h in Copy Files Objects */ = {isa = PBXBuildFile; fileRef = BA3E1638248E15D800FA0E33 /* NDManualViewController.h */; };
-		BA3E166D248E183400FA0E33 /* UIView+NDManualObjects.h in Copy Files Utils */ = {isa = PBXBuildFile; fileRef = BA3E163C248E15D800FA0E33 /* UIView+NDManualObjects.h */; };
-		BA98C19924C7EA61009E7CEB /* NDAutolayoutUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = BA98C19724C7EA61009E7CEB /* NDAutolayoutUtils.h */; };
-		BA98C19A24C7EA61009E7CEB /* NDAutolayoutUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = BA98C19824C7EA61009E7CEB /* NDAutolayoutUtils.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,8 +97,6 @@
 			dstPath = Headers/Utils;
 			dstSubfolderSpec = 7;
 			files = (
-				BA241AA1249212EB00CC5383 /* UIViewController+NDManualObjects.h in Copy Files Utils */,
-				BA3E166D248E183400FA0E33 /* UIView+NDManualObjects.h in Copy Files Utils */,
 			);
 			name = "Copy Files Utils";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,8 +109,6 @@
 		BA241A932490D88E00CC5383 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA241A952490D89500CC5383 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BA241A9A2490F22600CC5383 /* NDManualObjects.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = NDManualObjects.modulemap; sourceTree = "<group>"; };
-		BA241A9D24920FC900CC5383 /* UIViewController+NDManualObjects.h */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NDManualObjects.h"; sourceTree = "<group>"; tabWidth = 2; };
-		BA241A9E24920FC900CC5383 /* UIViewController+NDManualObjects.mm */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIViewController+NDManualObjects.mm"; sourceTree = "<group>"; tabWidth = 2; };
 		BA337A0D24E3FFF00061B1DC /* NDLoading.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDLoading.h; sourceTree = "<group>"; };
 		BA337A0E24E3FFF00061B1DC /* NDLoading.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NDLoading.mm; sourceTree = "<group>"; };
 		BA3E160A248E15BC00FA0E33 /* NDManualObjects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NDManualObjects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,8 +132,6 @@
 		BA3E1637248E15D800FA0E33 /* NDManualCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDManualCollectionViewController.h; sourceTree = "<group>"; };
 		BA3E1638248E15D800FA0E33 /* NDManualViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDManualViewController.h; sourceTree = "<group>"; };
 		BA3E1639248E15D800FA0E33 /* NDManualTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NDManualTableViewController.mm; sourceTree = "<group>"; };
-		BA3E163B248E15D800FA0E33 /* UIView+NDManualObjects.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIView+NDManualObjects.mm"; sourceTree = "<group>"; };
-		BA3E163C248E15D800FA0E33 /* UIView+NDManualObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NDManualObjects.h"; sourceTree = "<group>"; };
 		BA3E163E248E15D800FA0E33 /* NDManualObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDManualObject.h; sourceTree = "<group>"; };
 		BA3E1654248E164200FA0E33 /* NDManualObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NDManualObjects.h; sourceTree = "<group>"; };
 		BA3E1657248E16EA00FA0E33 /* NDManualObjects.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NDManualObjects.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -153,8 +139,6 @@
 		BA3E1659248E16EA00FA0E33 /* .swift-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".swift-format"; sourceTree = "<group>"; };
 		BA3E165A248E16EA00FA0E33 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		BA3E165B248E16EA00FA0E33 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		BA98C19724C7EA61009E7CEB /* NDAutolayoutUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NDAutolayoutUtils.h; sourceTree = "<group>"; };
-		BA98C19824C7EA61009E7CEB /* NDAutolayoutUtils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = NDAutolayoutUtils.mm; sourceTree = "<group>"; };
 		C1E0DB24D719B05BEFF2D8E1 /* Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig"; path = "Target Support Files/Pods-NDManualObjects-NDManualObjectsTests/Pods-NDManualObjects-NDManualObjectsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C20C56BB66E6828445EC3D4D /* Pods-NDManualObjects.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDManualObjects.release.xcconfig"; path = "Target Support Files/Pods-NDManualObjects/Pods-NDManualObjects.release.xcconfig"; sourceTree = "<group>"; };
 		C363EB0E1624F303231B1596 /* Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig"; path = "Target Support Files/Pods-NDManualObjects-NDManualObjectsTests/Pods-NDManualObjects-NDManualObjectsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -232,7 +216,6 @@
 			children = (
 				BA3E1654248E164200FA0E33 /* NDManualObjects.h */,
 				BA3E1629248E15D800FA0E33 /* Objects */,
-				BA3E163A248E15D800FA0E33 /* Utils */,
 				BA3E163D248E15D800FA0E33 /* Abstracts */,
 				BA241A9A2490F22600CC5383 /* NDManualObjects.modulemap */,
 				BA3E160E248E15BC00FA0E33 /* Info.plist */,
@@ -274,18 +257,6 @@
 			path = Objects;
 			sourceTree = "<group>";
 		};
-		BA3E163A248E15D800FA0E33 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				BA98C19624C7EA2B009E7CEB /* Privates */,
-				BA3E163B248E15D800FA0E33 /* UIView+NDManualObjects.mm */,
-				BA3E163C248E15D800FA0E33 /* UIView+NDManualObjects.h */,
-				BA241A9D24920FC900CC5383 /* UIViewController+NDManualObjects.h */,
-				BA241A9E24920FC900CC5383 /* UIViewController+NDManualObjects.mm */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		BA3E163D248E15D800FA0E33 /* Abstracts */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,15 +277,6 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
-		BA98C19624C7EA2B009E7CEB /* Privates */ = {
-			isa = PBXGroup;
-			children = (
-				BA98C19724C7EA61009E7CEB /* NDAutolayoutUtils.h */,
-				BA98C19824C7EA61009E7CEB /* NDAutolayoutUtils.mm */,
-			);
-			path = Privates;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -325,15 +287,12 @@
 				BA3E1655248E164200FA0E33 /* NDManualObjects.h in Headers */,
 				BA3E1641248E15D800FA0E33 /* NDManualView.h in Headers */,
 				BA3E1644248E15D800FA0E33 /* NDManualCollectionViewCell.h in Headers */,
-				BA3E1652248E15D800FA0E33 /* UIView+NDManualObjects.h in Headers */,
 				BA3E164D248E15D800FA0E33 /* NDManualTableViewController.h in Headers */,
 				BA3E164C248E15D800FA0E33 /* NDManualTabBarController.h in Headers */,
-				BA241A9F24920FC900CC5383 /* UIViewController+NDManualObjects.h in Headers */,
 				BA3E164E248E15D800FA0E33 /* NDManualCollectionViewController.h in Headers */,
 				BA3E1646248E15D800FA0E33 /* NDManualTableViewCell.h in Headers */,
 				BA337A0F24E3FFF00061B1DC /* NDLoading.h in Headers */,
 				BA3E1648248E15D800FA0E33 /* NDManualObject.h in Headers */,
-				BA98C19924C7EA61009E7CEB /* NDAutolayoutUtils.h in Headers */,
 				BA3E164F248E15D800FA0E33 /* NDManualViewController.h in Headers */,
 				BA3E1653248E15D800FA0E33 /* NDManualObject.h in Headers */,
 			);
@@ -515,12 +474,9 @@
 				BA3E164A248E15D800FA0E33 /* NDManualView.mm in Sources */,
 				BA337A1024E3FFF00061B1DC /* NDLoading.mm in Sources */,
 				BA3E1647248E15D800FA0E33 /* NDManualCollectionViewController.mm in Sources */,
-				BA241AA024920FC900CC5383 /* UIViewController+NDManualObjects.mm in Sources */,
 				BA3E1642248E15D800FA0E33 /* NDManualCollectionViewCell.mm in Sources */,
 				BA3E1643248E15D800FA0E33 /* NDManualViewController.mm in Sources */,
-				BA3E1651248E15D800FA0E33 /* UIView+NDManualObjects.mm in Sources */,
 				BA3E1650248E15D800FA0E33 /* NDManualTableViewController.mm in Sources */,
-				BA98C19A24C7EA61009E7CEB /* NDAutolayoutUtils.mm in Sources */,
 				BA3E1645248E15D800FA0E33 /* NDManualTabBarController.mm in Sources */,
 				BA3E1649248E15D800FA0E33 /* NDManualTableViewCell.mm in Sources */,
 			);
