@@ -7,7 +7,7 @@ target 'NDManualObjects' do
 
   # Pods for NDManualObjects
   pod 'NDLog', :path => '../NDLog'
-  pod 'NDUtils', :path => '../NDUtils'
+  pod 'NDUtils/objc', :path => '../NDUtils'
 
   target 'NDManualObjectsTests' do
     # Pods for testing

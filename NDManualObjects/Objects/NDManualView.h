@@ -12,6 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+IB_DESIGNABLE
 @interface NDManualView : UIView <NDManualObject>
 @end
 
