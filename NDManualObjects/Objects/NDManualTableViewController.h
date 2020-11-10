@@ -102,11 +102,14 @@ NS_ASSUME_NONNULL_BEGIN
     NS_SWIFT_NAME(register(nibNames:));
 
 // MARK: - Static cells
-- (void)registerIdentifier:(NSString*)identifier
-                      cell:(__kindof UITableViewCell* _Nullable)cell
-    NS_SWIFT_NAME(register(identifier:cell:));
-- (void)registerCells:(NSDictionary<NSString*, __kindof UITableViewCell*>*)cells
+- (void)registerCell:(__kindof UITableViewCell* _Nullable)cell
+    NS_SWIFT_NAME(register(cell:));
+- (void)unregisterCell:(__kindof UITableViewCell* _Nullable)cell
+    NS_SWIFT_NAME(unregister(cell:));
+- (void)registerCells:(NSArray<__kindof UITableViewCell*>*)cells
     NS_SWIFT_NAME(register(cells:));
+- (void)unregisterCells:(NSArray<__kindof UITableViewCell*>*)cells
+NS_SWIFT_NAME(unregister(cells:));
 
 /// allows multiple insert/delete/reload/move calls to be animated
 /// simultaneously. Nestable.

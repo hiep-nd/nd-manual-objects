@@ -307,43 +307,60 @@ struct cmpNSString {
 }
 
 // MARK: - Static cells
-- (void)registerIdentifier:(NSString*)identifier
-                      cell:(__kindof UITableViewCell*)cell {
+- (void)registerCell:(__kindof UITableViewCell*)cell {
+  if (!cell) {
+    NDAssertionFailure(@"Can not register cell: '%@' to '%@'.",
+                       cell, self);
+    return;
+  }
+  
+  auto identifier = cell.reuseIdentifier;
   if (!identifier) {
     NDAssertionFailure(@"Can not register identifier: '%@' to '%@'.",
                        identifier, self);
     return;
   }
 
-  if (cell) {
-    auto oldIdentifierIt = _staticIdentifiers.find(cell);
-    if (oldIdentifierIt != _staticIdentifiers.end()) {
-      if ([oldIdentifierIt->second isEqual:identifier]) {
-        return;
-      }
-
-      _staticCells.erase(oldIdentifierIt->second);
-    }
-
-    identifier = identifier.copy;
-    _staticIdentifiers[cell] = identifier;
-    _staticCells[identifier] = cell;
-  } else {
-    auto oldCellIt = _staticCells.find(identifier);
-    if (oldCellIt == _staticCells.end()) {
+  auto oldIdentifierIt = _staticIdentifiers.find(cell);
+  if (oldIdentifierIt != _staticIdentifiers.end()) {
+    if ([oldIdentifierIt->second isEqual:identifier]) {
       return;
     }
-
-    _staticIdentifiers.erase(oldCellIt->second);
-    _staticCells.erase(oldCellIt);
+    
+    _staticCells.erase(oldIdentifierIt->second);
   }
+  
+  identifier = identifier.copy;
+  _staticIdentifiers[cell] = identifier;
+  _staticCells[identifier] = cell;
 }
 
-- (void)registerCells:
-    (NSDictionary<NSString*, __kindof UITableViewCell*>*)cells {
-  [cells enumerateKeysAndObjectsUsingBlock:^(NSString* key,
-                                             UITableViewCell* obj, BOOL*) {
-    [self registerIdentifier:key cell:obj];
+- (void)unregisterCell:(__kindof UITableViewCell *)cell {
+  auto identifier = cell.reuseIdentifier;
+  if (!identifier) {
+    NDAssertionFailure(@"Can not unregister cell: '%@' to '%@'.",
+                       cell, self);
+    return;
+  }
+  
+  auto cellIt = _staticCells.find(identifier);
+  if (cellIt == _staticCells.end()) {
+    return;
+  }
+
+  _staticIdentifiers.erase(cellIt->second);
+  _staticCells.erase(cellIt);
+}
+
+- (void)registerCells:(NSArray<__kindof UITableViewCell*>*)cells {
+  [cells enumerateObjectsUsingBlock:^(UITableViewCell* obj, NSUInteger, BOOL*) {
+    [self registerCell:obj];
+  }];
+}
+
+- (void)unregisterCells:(NSArray<__kindof UITableViewCell *> *)cells {
+  [cells enumerateObjectsUsingBlock:^(UITableViewCell* obj, NSUInteger, BOOL*) {
+    [self unregisterCell:obj];
   }];
 }
 
