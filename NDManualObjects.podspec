@@ -14,13 +14,42 @@ Pod::Spec.new do |s|
   s.requires_arc   = true
   #s.source        = { :http => 'file:' + URI.escape(__dir__) + '/' }
   s.source       = { :git => "https://github.com/hiep-nd/nd-manual-objects.git", :tag => "Pod-#{s.version}" }
-  s.source_files  = "NDManualObjects/**/*.{h,m,mm}"
-  s.public_header_files = 'NDManualObjects/**/*.h'
-  #s.private_header_files = 'NDManualObjects/**/Privates/**/*.h'
-  s.header_mappings_dir = 'NDManualObjects'
-  s.framework = 'Foundation', 'UIKit'
-  s.module_map = 'NDManualObjects/NDManualObjects.modulemap'
-  
-  s.dependency 'NDLog', '~> 0.0.5'
-  s.dependency 'NDUtils/objc', '~> 0.0.4'
+
+  s.subspec 'Core' do |ss|
+    ss.source_files  = "Sources/Core/*.{h,m,mm,swift}"
+
+    ss.framework = 'Foundation'
+  end
+
+  s.subspec 'Abstracts' do |ss|
+    ss.source_files  = "Sources/Abstracts/*.{h,m,mm,swift}"
+
+    ss.framework = 'Foundation'
+
+    ss.dependency 'NDManualObjects/Core'
+  end
+
+  s.subspec 'Objects' do |ss|
+    ss.source_files  = "Sources/Objects/*.{h,m,mm,swift}"
+
+    ss.framework = 'Foundation', 'UIKit'
+
+    ss.dependency 'NDManualObjects/Abstracts'
+
+    s.dependency 'NDLog', '~> 0.0.6'
+    s.dependency 'NDUtils/objc', '~> 0.0.5'
+  end
+
+  s.subspec 'ObjC' do |ss|
+    ss.dependency 'NDManualObjects/Core'
+    ss.dependency 'NDManualObjects/Abstracts'
+    ss.dependency 'NDManualObjects/Objects'
+  end
+
+  s.subspec 'Swift' do |ss|
+#    ss.source_files  = "Sources/Swift/*.{h,m,mm,swift}"
+    ss.dependency 'NDManualObjects/ObjC'
+  end
+
+  s.default_subspec = 'Swift'
 end

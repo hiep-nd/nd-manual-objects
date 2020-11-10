@@ -1,24 +1,57 @@
 PODS:
-  - NDLog (0.0.5)
-  - NDUtils/Core (0.0.4.1)
-  - NDUtils/objc (0.0.4.1):
-    - NDLog (~> 0.0.5)
+  - NDLog (0.0.6.1):
+    - NDLog/Swift (= 0.0.6.1)
+  - NDLog/Core (0.0.6.1)
+  - NDLog/Swift (0.0.6.1):
+    - NDLog/Core
+  - NDManualObjects (0.0.8):
+    - NDLog (~> 0.0.6)
+    - NDManualObjects/Swift (= 0.0.8)
+    - NDUtils/objc (~> 0.0.5)
+  - NDManualObjects/Abstracts (0.0.8):
+    - NDLog (~> 0.0.6)
+    - NDManualObjects/Core
+    - NDUtils/objc (~> 0.0.5)
+  - NDManualObjects/Core (0.0.8):
+    - NDLog (~> 0.0.6)
+    - NDUtils/objc (~> 0.0.5)
+  - NDManualObjects/ObjC (0.0.8):
+    - NDLog (~> 0.0.6)
+    - NDManualObjects/Abstracts
+    - NDManualObjects/Core
+    - NDManualObjects/Objects
+    - NDUtils/objc (~> 0.0.5)
+  - NDManualObjects/Objects (0.0.8):
+    - NDLog (~> 0.0.6)
+    - NDManualObjects/Abstracts
+    - NDUtils/objc (~> 0.0.5)
+  - NDManualObjects/Swift (0.0.8):
+    - NDLog (~> 0.0.6)
+    - NDManualObjects/ObjC
+    - NDUtils/objc (~> 0.0.5)
+  - NDUtils/Core (0.0.5)
+  - NDUtils/objc (0.0.5):
+    - NDLog (~> 0.0.6)
     - NDUtils/Core
 
 DEPENDENCIES:
   - NDLog (from `../NDLog`)
+  - NDManualObjects (from `.`)
   - NDUtils/objc (from `../NDUtils`)
 
 EXTERNAL SOURCES:
   NDLog:
     :path: "../NDLog"
+  NDManualObjects:
+    :path: "."
   NDUtils:
     :path: "../NDUtils"
 
 SPEC CHECKSUMS:
-  NDLog: 2d478a5bc74f17ee56fea08adb6dacdaa36a07e6
-  NDUtils: 071967534549cb07e0122a53af462e4a5d6da124
+  NDLog: 1e996efb979679f547dcf729a955fe92577ed2c5
+  NDManualObjects: 238cf28c9a73c20552d3ed721da8b1a12f7e097f
+  NDUtils: 1a72e3cfd4f1510b261999c0f26f17648c033ac9
 
-PODFILE CHECKSUM: d689f65af6d929eb54735ae5927377727791eac1
+PODFILE CHECKSUM: c8e197154526150f2d9708be176cca81ad633f0f
 
 COCOAPODS: 1.9.3
