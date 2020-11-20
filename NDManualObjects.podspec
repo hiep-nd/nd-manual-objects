@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NDManualObjects"
-  s.version      = "0.0.8.1"
+  s.version      = "0.0.8.2"
   s.summary      = "Support create object by code instead of IB."
   s.description  = <<-DESC
   NDManualObjects is a small framework that support create object by code instead of IB.
@@ -15,40 +15,65 @@ Pod::Spec.new do |s|
   #s.source        = { :http => 'file:' + URI.escape(__dir__) + '/' }
   s.source       = { :git => "https://github.com/hiep-nd/nd-manual-objects.git", :tag => "Pod-#{s.version}" }
 
-  s.subspec 'Core' do |ss|
-    ss.source_files  = "Sources/Core/*.{h,m,mm,swift}"
+  s.subspec 'Core_ObjC' do |ss|
+    ss.source_files  = "Sources/Core_ObjC/*.{h,m,mm,swift}"
 
     ss.framework = 'Foundation'
+  end
+
+  s.subspec 'Core_Swift' do |ss|
+    ss.dependency 'NDManualObjects/Core_ObjC'
+  end
+
+  s.subspec 'Core' do |ss|
+    ss.dependency 'NDManualObjects/Core_Swift'
+  end
+
+  s.subspec 'Abstracts_ObjC' do |ss|
+    ss.source_files  = "Sources/Abstracts_ObjC/*.{h,m,mm,swift}"
+
+    ss.framework = 'Foundation'
+
+    ss.dependency 'NDManualObjects/Core_ObjC'
+  end
+
+  s.subspec 'Abstracts_Swift' do |ss|
+    ss.dependency 'NDManualObjects/Abstracts_ObjC'
   end
 
   s.subspec 'Abstracts' do |ss|
-    ss.source_files  = "Sources/Abstracts/*.{h,m,mm,swift}"
-
-    ss.framework = 'Foundation'
-
-    ss.dependency 'NDManualObjects/Core'
+    ss.dependency 'NDManualObjects/Abstracts_Swift'
   end
 
-  s.subspec 'Objects' do |ss|
-    ss.source_files  = "Sources/Objects/*.{h,m,mm,swift}"
+  s.subspec 'Objects_ObjC' do |ss|
+    ss.source_files  = "Sources/Objects_ObjC/*.{h,m,mm,swift}"
 
     ss.framework = 'Foundation', 'UIKit'
 
-    ss.dependency 'NDManualObjects/Abstracts'
+    ss.dependency 'NDManualObjects/Abstracts_ObjC'
 
     s.dependency 'NDLog/ObjC', '~> 0.0.6'
-    s.dependency 'NDUtils/objc', '~> 0.0.5'
+    s.dependency 'NDUtils/objc_ObjC', '~> 0.0.5'
+  end
+
+  s.subspec 'Objects_Swift' do |ss|
+    ss.dependency 'NDManualObjects/Objects_ObjC'
+  end
+
+  s.subspec 'Objects' do |ss|
+    ss.dependency 'NDManualObjects/Objects_Swift'
   end
 
   s.subspec 'ObjC' do |ss|
-    ss.dependency 'NDManualObjects/Core'
-    ss.dependency 'NDManualObjects/Abstracts'
-    ss.dependency 'NDManualObjects/Objects'
+    ss.dependency 'NDManualObjects/Core_ObjC'
+    ss.dependency 'NDManualObjects/Abstracts_ObjC'
+    ss.dependency 'NDManualObjects/Objects_ObjC'
   end
 
   s.subspec 'Swift' do |ss|
-#    ss.source_files  = "Sources/Swift/*.{h,m,mm,swift}"
-    ss.dependency 'NDManualObjects/ObjC'
+    ss.dependency 'NDManualObjects/Core_Swift'
+    ss.dependency 'NDManualObjects/Abstracts_Swift'
+    ss.dependency 'NDManualObjects/Objects_Swift'
   end
 
   s.default_subspec = 'Swift'
