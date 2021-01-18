@@ -1,5 +1,5 @@
 //
-//  NDLoading.h
+//  NDLoadingContainer.h
 //  NDManualObjects
 //
 //  Created by Nguyen Duc Hiep on 8/12/20.
@@ -10,14 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol NDLoading <NSObject>
+NS_SWIFT_NAME(NDLoadingContainerProtocol)
+@protocol NDLoadingContainer <NSObject>
 
 @property(nonatomic, strong, readonly)
     UIActivityIndicatorView* activityIndicatorView;
 
 @end
 
-@interface NDManualTableViewController (NDLoading)
+@interface NDManualTableViewController (NDLoadingContainer)
 
 - (void)enableLoadingTableViewCell;
 

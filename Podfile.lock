@@ -8,46 +8,46 @@ PODS:
     - NDLog/Core_ObjC
   - NDLog/Swift (0.0.6.3):
     - NDLog/Core_Swift
-  - NDManualObjects (0.0.8.1):
+  - NDManualObjects (0.0.8.2):
     - NDLog/ObjC (~> 0.0.6)
-    - NDManualObjects/Swift (= 0.0.8.1)
+    - NDManualObjects/Swift (= 0.0.8.2)
     - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Abstracts_ObjC (0.0.8.1):
-    - NDLog/ObjC (~> 0.0.6)
-    - NDManualObjects/Core_ObjC
-    - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Abstracts_Swift (0.0.8.1):
-    - NDLog/ObjC (~> 0.0.6)
-    - NDManualObjects/Abstracts_ObjC
-    - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Core_ObjC (0.0.8.1):
-    - NDLog/ObjC (~> 0.0.6)
-    - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Core_Swift (0.0.8.1):
+  - NDManualObjects/Abstracts_ObjC (0.0.8.2):
     - NDLog/ObjC (~> 0.0.6)
     - NDManualObjects/Core_ObjC
     - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Objects_ObjC (0.0.8.1):
+  - NDManualObjects/Abstracts_Swift (0.0.8.2):
     - NDLog/ObjC (~> 0.0.6)
     - NDManualObjects/Abstracts_ObjC
     - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Objects_Swift (0.0.8.1):
+  - NDManualObjects/Core_ObjC (0.0.8.2):
+    - NDLog/ObjC (~> 0.0.6)
+    - NDUtils/objc_ObjC (~> 0.0.5)
+  - NDManualObjects/Core_Swift (0.0.8.2):
+    - NDLog/ObjC (~> 0.0.6)
+    - NDManualObjects/Core_ObjC
+    - NDUtils/objc_ObjC (~> 0.0.5)
+  - NDManualObjects/Objects_ObjC (0.0.8.2):
+    - NDLog/ObjC (~> 0.0.6)
+    - NDManualObjects/Abstracts_ObjC
+    - NDUtils/objc_ObjC (~> 0.0.5)
+  - NDManualObjects/Objects_Swift (0.0.8.2):
     - NDLog/ObjC (~> 0.0.6)
     - NDManualObjects/Objects_ObjC
     - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Swift (0.0.8.1):
+  - NDManualObjects/Swift (0.0.8.2):
     - NDLog/ObjC (~> 0.0.6)
     - NDManualObjects/Abstracts_Swift
     - NDManualObjects/Core_Swift
     - NDManualObjects/Objects_Swift
     - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDUtils/Core_ObjC (0.0.5.1)
-  - NDUtils/objc (0.0.5.1):
+  - NDUtils/Core_ObjC (0.0.5.2)
+  - NDUtils/objc (0.0.5.2):
     - NDUtils/objc_Swift
-  - NDUtils/objc_ObjC (0.0.5.1):
+  - NDUtils/objc_ObjC (0.0.5.2):
     - NDLog/ObjC (~> 0.0.6)
     - NDUtils/Core_ObjC
-  - NDUtils/objc_Swift (0.0.5.1):
+  - NDUtils/objc_Swift (0.0.5.2):
     - NDUtils/objc_ObjC
 
 DEPENDENCIES:
@@ -65,8 +65,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   NDLog: 783141ece6ac6a398262145b59cc7c27b80ab58d
-  NDManualObjects: 8351bc3d627f4f21f529fdf449c2dc8c7a96ef79
-  NDUtils: aa4bbf2c741cf5d9b53276beb0cff3b7a365b7b2
+  NDManualObjects: 352b918cd30731fabb7649cb6384b0e2c7a6d9c1
+  NDUtils: fc37ba3df6e1af1aa014df7f70c7620bb7cb330b
 
 PODFILE CHECKSUM: c8e197154526150f2d9708be176cca81ad633f0f
 

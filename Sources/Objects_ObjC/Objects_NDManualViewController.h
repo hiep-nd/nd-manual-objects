@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic, copy) void (^_Nullable viewDidLoadHandler)
     (__kindof NDManualViewController*);
+@property(nonatomic, copy) void (^_Nullable wasDismissedHandler)
+    (__kindof NDManualViewController*);
 
 @end
 

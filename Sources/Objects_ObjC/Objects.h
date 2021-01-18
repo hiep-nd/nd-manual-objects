@@ -6,7 +6,7 @@
 //  Copyright © 2020 Nguyen Duc Hiep. All rights reserved.
 //
 
-#import <NDManualObjects/Objects_NDLoading.h>
+#import <NDManualObjects/Objects_NDLoadingContainer.h>
 #import <NDManualObjects/Objects_NDManualCollectionViewCell.h>
 #import <NDManualObjects/Objects_NDManualCollectionViewController.h>
 #import <NDManualObjects/Objects_NDManualObject.h>

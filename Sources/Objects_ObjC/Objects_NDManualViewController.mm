@@ -8,6 +8,8 @@
 
 #import <NDManualObjects/Objects_NDManualViewController.h>
 
+#import <NDUtils/NDUtils.h>
+
 @implementation NDManualViewController
 
 // MARK: - UIViewController
@@ -35,6 +37,13 @@
   if (self.viewDidLoadHandler) {
     self.viewDidLoadHandler(self);
     self.viewDidLoadHandler = nil;
+  }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+  [super viewDidDisappear:animated];
+  if (self.isBeingDismissed) {
+    NDCallIfCan(self.wasDismissedHandler, self);
   }
 }
 
