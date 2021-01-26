@@ -9,6 +9,7 @@
 #import <NDManualObjects/Objects_NDLoadingContainer.h>
 #import <NDManualObjects/Objects_NDManualCollectionViewCell.h>
 #import <NDManualObjects/Objects_NDManualCollectionViewController.h>
+#import <NDManualObjects/Objects_NDManualNavigationController.h>
 #import <NDManualObjects/Objects_NDManualObject.h>
 #import <NDManualObjects/Objects_NDManualTabBarController.h>
 #import <NDManualObjects/Objects_NDManualTableViewCell.h>

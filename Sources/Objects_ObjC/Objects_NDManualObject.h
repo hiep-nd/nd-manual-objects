@@ -13,4 +13,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NDManualObject : NSObject <NDManualObject>
 @end
 
+#define NDManualObject_manualInit_Default_Impl -(void)manualInit{};
+
 NS_ASSUME_NONNULL_END

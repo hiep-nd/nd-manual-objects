@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "NDManualObjects"
-  s.version      = "0.0.8.3"
+  s.version      = "0.0.8.4"
   s.summary      = "Support create object by code instead of IB."
   s.description  = <<-DESC
   NDManualObjects is a small framework that support create object by code instead of IB.

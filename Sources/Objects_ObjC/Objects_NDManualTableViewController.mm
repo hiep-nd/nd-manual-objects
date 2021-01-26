@@ -8,6 +8,8 @@
 
 #import <NDManualObjects/Objects_NDManualTableViewController.h>
 
+#import <NDManualObjects/Objects_NDManualObject.h>
+
 #import <NDLog/NDLog.h>
 #import <NDUtils/NDUtils.h>
 
@@ -426,8 +428,6 @@ struct cmpNSString {
                                               forIndexPath:indexPath];
 }
 // MARK: - NDManualObject
-
-- (void)manualInit {
-}
+NDManualObject_manualInit_Default_Impl;
 
 @end

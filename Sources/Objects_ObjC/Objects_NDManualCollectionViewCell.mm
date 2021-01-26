@@ -8,6 +8,8 @@
 
 #import <NDManualObjects/Objects_NDManualCollectionViewCell.h>
 
+#import <NDManualObjects/Objects_NDManualObject.h>
+
 @implementation NDManualCollectionViewCell
 
 // MARK: - UICollectionViewCell
@@ -28,8 +30,6 @@
 }
 
 // MARK: - NDManualObject
-
-- (void)manualInit {
-}
+NDManualObject_manualInit_Default_Impl;
 
 @end

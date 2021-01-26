@@ -8,6 +8,8 @@
 
 #import <NDManualObjects/Objects_NDManualTableViewCell.h>
 
+#import <NDManualObjects/Objects_NDManualObject.h>
+
 @implementation NDManualTableViewCell
 
 // MARK: - UITableViewCell
@@ -30,8 +32,6 @@
 }
 
 // MARK: - NDManualObject
-
-- (void)manualInit {
-}
+NDManualObject_manualInit_Default_Impl;
 
 @end

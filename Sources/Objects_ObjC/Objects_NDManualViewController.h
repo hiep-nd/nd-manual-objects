@@ -1,5 +1,5 @@
 //
-//  NDManualViewController.h
+//  Objects_NDManualViewController.h
 //  NDManualObjects
 //
 //  Created by Nguyen Duc Hiep on 2/13/20.
@@ -10,15 +10,19 @@
 
 #import <NDManualObjects/Abstracts_NDManualObject.h>
 
+#import <NDUtils/NDUtils.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NDManualViewController : UIViewController <NDManualObject>
-
+NS_SWIFT_NAME(NDManualViewControllerProtocol)
+@protocol NDManualViewController <NDManualObject>
 @property(nonatomic, copy) void (^_Nullable viewDidLoadHandler)
-    (__kindof NDManualViewController*);
+    (__kindof id<NDManualViewController>);
 @property(nonatomic, copy) void (^_Nullable wasDismissedHandler)
-    (__kindof NDManualViewController*);
+    (__kindof id<NDManualViewController>);
+@end
 
+@interface NDManualViewController : UIViewController <NDManualViewController>
 @end
 
 NS_ASSUME_NONNULL_END

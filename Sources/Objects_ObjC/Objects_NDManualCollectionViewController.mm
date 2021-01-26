@@ -8,6 +8,8 @@
 
 #import <NDManualObjects/Objects_NDManualCollectionViewController.h>
 
+#import <NDManualObjects/Objects_NDManualObject.h>
+
 #import <NDLog/NDLog.h>
 #import <NDUtils/NDUtils.h>
 
@@ -134,8 +136,6 @@
 }
 
 // MARK: - NDManualObject
-
-- (void)manualInit {
-}
+NDManualObject_manualInit_Default_Impl;
 
 @end

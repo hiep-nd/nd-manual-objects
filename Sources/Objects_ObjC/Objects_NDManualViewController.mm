@@ -1,5 +1,5 @@
 //
-//  NDManualViewController.mm
+//  Objects_NDManualViewController.mm
 //  NDManualObjects
 //
 //  Created by Nguyen Duc Hiep on 2/13/20.
@@ -8,12 +8,15 @@
 
 #import <NDManualObjects/Objects_NDManualViewController.h>
 
+#import <NDManualObjects/Objects_NDManualViewControllerHelper.h>
+
 #import <NDUtils/NDUtils.h>
 
-@implementation NDManualViewController
+@implementation NDManualViewController {
+  NDManualViewController_helper_Default_Decl;
+}
 
 // MARK: - UIViewController
-
 - (instancetype)initWithNibName:(NSString*)nibNameOrNil
                          bundle:(NSBundle*)nibBundleOrNil {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,25 +34,6 @@
   return self;
 }
 
-- (void)viewDidLoad {
-  [super viewDidLoad];
-
-  if (self.viewDidLoadHandler) {
-    self.viewDidLoadHandler(self);
-    self.viewDidLoadHandler = nil;
-  }
-}
-
-- (void)viewDidDisappear:(BOOL)animated {
-  [super viewDidDisappear:animated];
-  if (self.isBeingDismissed) {
-    NDCallIfCan(self.wasDismissedHandler, self);
-  }
-}
-
-// MARK: - NDManualObject
-
-- (void)manualInit {
-}
+NDManualViewController_Default_Impl;
 
 @end

@@ -8,34 +8,34 @@ PODS:
     - NDLog/Core_ObjC
   - NDLog/Swift (0.0.6.3):
     - NDLog/Core_Swift
-  - NDManualObjects (0.0.8.2):
+  - NDManualObjects (0.0.8.3):
     - NDLog/ObjC (~> 0.0.6)
-    - NDManualObjects/Swift (= 0.0.8.2)
+    - NDManualObjects/Swift (= 0.0.8.3)
     - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Abstracts_ObjC (0.0.8.2):
-    - NDLog/ObjC (~> 0.0.6)
-    - NDManualObjects/Core_ObjC
-    - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Abstracts_Swift (0.0.8.2):
-    - NDLog/ObjC (~> 0.0.6)
-    - NDManualObjects/Abstracts_ObjC
-    - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Core_ObjC (0.0.8.2):
-    - NDLog/ObjC (~> 0.0.6)
-    - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Core_Swift (0.0.8.2):
+  - NDManualObjects/Abstracts_ObjC (0.0.8.3):
     - NDLog/ObjC (~> 0.0.6)
     - NDManualObjects/Core_ObjC
     - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Objects_ObjC (0.0.8.2):
+  - NDManualObjects/Abstracts_Swift (0.0.8.3):
     - NDLog/ObjC (~> 0.0.6)
     - NDManualObjects/Abstracts_ObjC
     - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Objects_Swift (0.0.8.2):
+  - NDManualObjects/Core_ObjC (0.0.8.3):
+    - NDLog/ObjC (~> 0.0.6)
+    - NDUtils/objc_ObjC (~> 0.0.5)
+  - NDManualObjects/Core_Swift (0.0.8.3):
+    - NDLog/ObjC (~> 0.0.6)
+    - NDManualObjects/Core_ObjC
+    - NDUtils/objc_ObjC (~> 0.0.5)
+  - NDManualObjects/Objects_ObjC (0.0.8.3):
+    - NDLog/ObjC (~> 0.0.6)
+    - NDManualObjects/Abstracts_ObjC
+    - NDUtils/objc_ObjC (~> 0.0.5)
+  - NDManualObjects/Objects_Swift (0.0.8.3):
     - NDLog/ObjC (~> 0.0.6)
     - NDManualObjects/Objects_ObjC
     - NDUtils/objc_ObjC (~> 0.0.5)
-  - NDManualObjects/Swift (0.0.8.2):
+  - NDManualObjects/Swift (0.0.8.3):
     - NDLog/ObjC (~> 0.0.6)
     - NDManualObjects/Abstracts_Swift
     - NDManualObjects/Core_Swift
@@ -65,9 +65,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   NDLog: 783141ece6ac6a398262145b59cc7c27b80ab58d
-  NDManualObjects: 352b918cd30731fabb7649cb6384b0e2c7a6d9c1
+  NDManualObjects: fab899ecf8b9ed7f4bee0e5b289b9e7dc166e318
   NDUtils: fc37ba3df6e1af1aa014df7f70c7620bb7cb330b
 
 PODFILE CHECKSUM: c8e197154526150f2d9708be176cca81ad633f0f
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1
